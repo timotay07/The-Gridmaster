@@ -6,9 +6,6 @@
 	body, button, input {
 		font-size:1em;
 	}
-	button {
-		/*padding: 1em;*/
-	}
 	#grid-control-panel {
 		font-family: sans-serif;
 		padding: 1em;
@@ -16,7 +13,7 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
-		/*opacity: .7;*/
+		z-index: 101;
 	}
 	label {
 		width: 75%;
@@ -33,6 +30,8 @@
 		border-bottom-left-radius: 5px;
 	}
 	#grid-control-panel > input {
+		-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		width: 75px;
 		float: left;
@@ -50,19 +49,16 @@
 		width: 13px;
 		display: block;
 		height: 50%;
+		-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		background-color: #000;
 		border: 1px solid #fff;
 		width: 50px;
 		color: #fff;
 		position: relative;
+		cursor: pointer;
 	}
-	/*#up {
-		border-top-right-radius: 5px;
-	}
-	#down {
-		border-bottom-right-radius: 5px;
-	}*/
 	#tuner {
 		height: 60px;
 		position: relative;
@@ -70,6 +66,8 @@
 	}
 	#toggle-grid {
 		height: 60px;
+		-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		padding: 1em;
 		border: 1px solid #fff;
@@ -78,6 +76,10 @@
 		width: 75px;
 		border-top-right-radius: 5px;
 		border-bottom-right-radius: 5px;
+		cursor: pointer;
+	}
+	button#up:focus, button#down:focus, button#toggle-grid:focus {
+  		outline: none;
 	}
 	</style>
 </head>
