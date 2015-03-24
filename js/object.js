@@ -6,6 +6,7 @@ $(document).ready(function(){
     var colWidth = (1/numCols) * 100;
     var $body = $("body");
 
+    $body.prepend('<div id="grid-control-panel"><label>Line Height</label><input type="text" name="lineHeight" value="24" disabled><div id="tuner"><button id="up">&#43;</button><button id="down">&#45;</button></div><button id="toggle-grid">Off</button></div>');
     /*Establishes horizontal rhythm*/
     $body.prepend('<div id="xAxis"></div>');
     $("#xAxis").prepend('<div class="fill"></div>');
@@ -47,7 +48,7 @@ $(document).ready(function(){
     /*Call the function for initial build*/
     build_yAxis();
 	
-$body.append('<div id="yAxis"></div>');
+	
 	// controls and inputs for control-panel
 	$("#up").click(function(){
 		inputLH.val(lineHeight + 1);
