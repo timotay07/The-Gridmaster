@@ -1,18 +1,8 @@
-/*begin demo/debug*/
-.demo {
-    width:100%;
-    background: #000;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-}
-
-/*end demo/debug*/
-
     @media only screen {
     body {
         margin: 0;
         height: 100%;
+        font-family: Helvetica, Arial, sans-serif;
     }
     .container {
         max-width: 1000px;
@@ -78,20 +68,47 @@
         width: 100%;
     }
     /* typography */
-    p {
-        font-size: 1em;
-        line-height: 1.625em;
-        margin-top: 0;
-        margin-bottom: 1.125em;
-        padding-top: 0.5em;
-    }
     h1 {
-        font-size: 2.5em;
-        line-height: 0.65em;
-        margin-bottom: 0.65em;
-        margin-top: 0.65em;
+        font-size: 3.375em;
+        line-height: 1.335em;
+        padding-top:0.334em;
+        margin-top: 0;
+        margin-bottom: 0.555em;
         position: relative;
     }
+    h2 {
+        font-size: 2.25em;
+        line-height: 0.667em;
+        margin-top: 0;
+        margin-bottom: 0.667em;
+    }
+    p {
+        font-size: 1em;
+        line-height: 1.5em;
+        margin-top: 0;
+        margin-bottom: 1.0625em;
+        padding-top: 0.4375em;
+    }
+    p > a {
+        display: inline;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 1em;
+        line-height: 1.5em;
+        margin-top: 0;
+        margin-bottom: 1.0625em;
+        padding-top: 0.4375em;
+        color: #000;
+        transition: all 500ms ease;
+        font-weight: bold;   
+    }
+    a:hover {
+        opacity: 0.3;
+        color: #e74c3c;
+    }
+
 }
 
 @media only screen and (min-width: 40.063em) {
