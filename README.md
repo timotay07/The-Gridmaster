@@ -1,7 +1,3 @@
-# Go-Go-ToolKit
+# The Gridmaster
 
-The Go Go ToolKit is a mobile first tool kit for web projects from design to development.
-
-Designers: Start with vector-based grids located in the Designer Assets directory.
-
-Developers: Transform vector-based mockups to html with the help of css classes.
+The In-Browser Prototyping System. Master the Grid, Master the Baseline, Master the Beast.

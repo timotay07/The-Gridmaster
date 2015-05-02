@@ -71,16 +71,18 @@
     h1 {
         font-size: 3.375em;
         line-height: 1.335em;
-        padding-top:0.3148em;
+        /*padding-top:0.3148em;*/
         margin-top: 0;
-        margin-bottom: 0.5925em;
+        margin-bottom: 0;
+        /*margin-bottom: 0.5925em;*/
         position: relative;
     }
     h2 {
         font-size: 2.25em;
-        line-height: 0.667em;
+        line-height: 1.334em;
         margin-top: 0;
-        margin-bottom: 0.667em;
+        margin-bottom: 0.666em;
+        /*margin-bottom: 0.667em;*/
     }
     p {
         font-size: 1em;
