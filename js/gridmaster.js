@@ -4,6 +4,16 @@ function build_xyControlPanel() {
 	$("input[name=lineHeight]").val();
 	$("input[name=numberColumns]").val();
 	$("input[name=containerWidth]").val();
+
+		function hide_controlPanel(booleanValue) {
+		if (booleanValue === true) {
+			$("#gggcontrol-panel").hide();
+		}
+	}
+
+	//turn off widget boolean --> true will hide control panel widget
+	hide_controlPanel();
+
 }
 
 // call function
