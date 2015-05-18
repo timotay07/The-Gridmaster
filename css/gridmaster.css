@@ -4,12 +4,81 @@
         height: 100%;
         font-family: Helvetica, Arial, sans-serif;
     }
+    /* typography */
+    h1 {
+        font-size: 3.375em;
+        line-height: 1.335em;
+        margin: 0 0 0 0;
+    }
+    h2 {
+        font-size: 2.25em;
+        line-height: 1.334em;
+        margin: 0 0 0.667em 0;
+    }
+    h3 {
+        font-size: 1.5em;
+        line-height: 1em;
+        margin: 0 0 1em 0;
+    }
+    p {
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0 0 1.5em 0;
+    }
+    p > a {
+        display: inline;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0 0 0 0;
+        color: #000;
+        transition: all 500ms ease;
+        font-weight: bold;   
+    }
+    a:hover {
+        opacity: 0.3;
+        color: #e74c3c;
+    }
+    ul {
+        margin: 0 0 1.5em 1.5em;
+        padding: 0 0 0 0;
+    }
+    li {
+        line-height: 1.5em;
+        list-style: none;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .text-center {
+        text-align: center;
+    }
+    ul.code {
+        background: #000;
+        border-radius: 10px;
+        /*padding: 3px 10px;*/
+        display: inline-block;
+        padding: 1.5em 1.5em 1.5em 1.5em;
+    }
+    span.code {
+        background: #000;
+        color: #FF0080;
+        border-radius: 10px;
+        padding: 3px 10px;
+    }
+    span.highlight {
+        color: #39FF14;
+    }
+    /*div structure*/
     .container {
         max-width: 1000px;
         margin: auto;
     }
     .group {
         width: 100%;
+        margin-bottom: 1.5em;
     }
     .group:after {
         content: "";
@@ -67,50 +136,6 @@
     .md-1, .md-2, .md-3, .md-4, .md-5, .md-6, .md-7, .md-8, .md-9, .md-10, .md-11, .md-12, .lg-1, .lg-2, .lg-3, .lg-4, .lg-5, .lg-6, .lg-7, .lg-8, .lg-9, .lg-10, .lg-11, .lg-12 {
         width: 100%;
     }
-    /* typography */
-    h1 {
-        font-size: 3.375em;
-        line-height: 1.335em;
-        /*padding-top:0.3148em;*/
-        margin-top: 0;
-        margin-bottom: 0;
-        /*margin-bottom: 0.5925em;*/
-        position: relative;
-    }
-    h2 {
-        font-size: 2.25em;
-        line-height: 1.334em;
-        margin-top: 0;
-        margin-bottom: 0.666em;
-        /*margin-bottom: 0.667em;*/
-    }
-    p {
-        font-size: 1em;
-        line-height: 1.5em;
-        margin-top: 0;
-        margin-bottom: 1.0625em;
-        padding-top: 0.375em;
-    }
-    p > a {
-        display: inline;
-    }
-    a {
-        display: block;
-        text-decoration: none;
-        font-size: 1em;
-        line-height: 1.5em;
-        margin-top: 0;
-        margin-bottom: 1.0625em;
-        padding-top: 0.4375em;
-        color: #000;
-        transition: all 500ms ease;
-        font-weight: bold;   
-    }
-    a:hover {
-        opacity: 0.3;
-        color: #e74c3c;
-    }
-
 }
 
 @media only screen and (min-width: 40.063em) {

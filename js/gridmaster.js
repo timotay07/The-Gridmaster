@@ -31,7 +31,14 @@ var containerWidth = Number(inputCW.val());
 
 //we(I) are going to rename this GridMaster "In-browser Prototyping System" - said this on 5/1/2015 and git has this version timestamped - my poor mans patent
 function gogoGridClass(lineHeight,numCols,containerWidth) {
-	this.screenHeight = $(window).height();
+	this.getGridHeight = function(){
+		this.screenHeight = $(window).height();
+		if (this.screenHeight < $(document).height()) {
+			this.screenHeight = $(document).height();
+		}
+		return this.screenHeight;
+	};
+	this.screenHeight = this.getGridHeight();
 	//vertical object params
 	this.lineHeight = lineHeight;
 	this.adjustedLineHeight = this.lineHeight - 2 + "px";
@@ -157,3 +164,8 @@ $(window).resize(function(){
 	gogoGrid.build_yAxis();
 	gogoGrid.build_xAxis();
 });
+
+//line-height finder / typography tool
+
+// $("h1, h2, h3, h4, h5, h6, p, a, li").css({"background-color": "#8AACB8",
+//  "opacity":"0.7"});

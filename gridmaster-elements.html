@@ -2,26 +2,93 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/gridmaster.css">
 	<style>
-	
+	#navigation li{
+		list-style: none;
+	}
+	.fl-right {
+		float: right;
+	}
 	</style>
 </head>
 <body>
-
 <div class="container">
 	<div class="group">
-		<div class="lg-12">
-			<h1>The Go Go Framework</h1>
-			<h2>Design to Development</h2>
-			<p>The Go Go Framework was developed as a tool to help Designers and Developers to collaborate and just get stuff done. Many do not believe that one can get a mockup correct pixel for pixel. The Go Go Framework is built and programmed to ignore this rhetoric. Designers: Download the Go-Go Framework and use the Adobe Illustrator Go-Go Grid template found in the DesignersAssets directory. Developers: Download the Go-Go Framework and open the index page to start developing designs, and when you are done, delete the gogo.js file. And...presto! The grid is gone!</p>
-
-			For more tech specs and information visit the <a href="https://github.com/maviola5/Go-Go-Framework/">Go-Go Framework </a>page at Github!
+	    <div class="lg-12">
+	      <div class="logo"><a href="https://github.com/maviola5/The-Gridmaster/">The Gridmaster Home</a></div>
+	    </div>
+	  </div>
+	<div class="group">
+		<div class="lg-9 fl-right">
+			<h1 class="text-center">The Gridmaster</h1>
+			<h2 class="text-center">The In-Browser Prototyping System</h2>
 		</div>
 	</div>
+	<div class="group">
+		<div id="sidbar" class="lg-3">
+			<ul id="navigation">
+				<li><a href="#getting_started">Getting started</a></li>
+				<li><a href="#control_panel">The Control Panel</a></li>
+				<li><a href="#setting_defaults">Setting Defaults</a></li>
+				<li><a href="#">The Baseline</a></li>
+				<li><a href="#">The Grid</a></li>
+				<li><a href="#">Typography</a></li>
+				<li><a href="#">Buttons</a></li>
+				<li><a href="#">List items</a></li>
+				<li><a href="#">Links</a></li>
+				<li><a href="#">Tables</a></li>
+				<li><a href="#">Inputs</a></li>
+			</ul>
+		</div>
+		<div id="content" class="lg-9">
+			<h3>What the hell is The Gridmaster</h2>
+			<p>Thesis statement for The Gridmaster. The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.</p>	
+
+			<p>Clone the project at <a href="https://github.com/maviola5/The-Gridmaster/">The Gridmaster </a>page at Github!</p>
+
+			<h3 id="getting_started">Getting Started</h3>
+			<p>First things first. Clone or download this project to your desktop. Open the index page in a browser. Blow up everything between the opening <span class="code">&lt;body&gt;</span> tag and the first <span class="code">&lt;script&gt;</span> tag. Now you have a clean boilerplate, no need to hookup a new page and copy paste stylsheets and scripts, it's already there.</p>
+			<p>So you have your blank project. Now what? Determine your Magic Numbers.</p>
+			<p>Your first Magic Nmber: <span class="code">&lt;p&gt;</span> font-size. The second Magic Number: <span class="code">&lt;p&gt;</span> line-height.</p>
+		<!-- 	<p>There are many ways to come up with these two numbers, but typically you will see <span class="code">&lt;p&gt;</span> font-sizes ranging from 14px to 18px. And for line-height, modern web sites will use a ratio ranging from 1.4 to 1.7 of the font-size.</p> -->
+			<p>The Gridmaster starts out with the Magic Numbers 16(default browser body font-size) and 24(the product of 1.5, common line-height/font-size ratio of modern web typgraphy).</p>
+			<h3 id="control_panel">The Control Panel</h3>
+			<p>The control panel is located in the bottom left corner of the screen. From the control panel you can increment the line-height and number of columns. Additionally, you can set the page or container width. If you want to preview your layout without the grid and baseline, simply toggle Gridmaster with the "Grid Off" button.</p>
+			<h3 id="setting_defaults">Setting Defaults</h3>
+			<p>Incrementing line-height, columns and page width is fine when trying to determine your project settings, but once you have decided on the parameters, set the Gridmaster defaults in the gridmaster.js file. Near the top of the document, you will find three functions that will set the default line-height, number of columns, and page width.</p>
+			<ul class="code">
+				<li><span class="code">$("input[name=lineHeight]").val();</span></li>
+				<li><span class="code">$("input[name=numberColumns]").val();</span></li>
+				<li><span class="code">$("input[name=containerWidth]").val();</span></li>
+			</ul>
+			<p>Simply plug-in your values like so:</p>
+			<ul class="code">
+				<li><span class="code">$("input[name=lineHeight]").val(<span class="highlight">20</span>);</span></li>
+				<li><span class="code">$("input[name=numberColumns]").val(<span class="highlight">10</span>);</span></li>
+				<li><span class="code">$("input[name=containerWidth]").val(<span class="highlight">960</span>);</span></li>
+			</ul>
+		</div>
+	</div>		
+			
 </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/object.js"></script>
+<script src="js/gridmaster.js"></script>
+<script>
+	var docPos = $(document).scrollTop();
+	$(window).scroll(function(){
+		
+			$("#navigation").css({
+				"position":"fixed",
+				"top":"24px"
+			});
+			
+		console.log(docPos);
+	});
+	// var x = $(document).scrollTop();
+	// console.log(x);
+</script>
 </body>
 </html>
