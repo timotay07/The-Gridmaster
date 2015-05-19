@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	<div class="group">
-		<div id="sidbar" class="lg-3">
+		<div id="sidebar" class="lg-3">
 			<ul id="navigation">
 				<li><a href="#getting_started">Getting started</a></li>
 				<li><a href="#control_panel">The Control Panel</a></li>
@@ -77,18 +77,33 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/gridmaster.js"></script>
 <script>
-	var docPos = $(document).scrollTop();
-	$(window).scroll(function(){
-		
-			$("#navigation").css({
-				"position":"fixed",
-				"top":"24px"
-			});
-			
-		console.log(docPos);
-	});
-	// var x = $(document).scrollTop();
-	// console.log(x);
+	$(document).ready(function(){
+		var x = $("#content").height();
+	         	console.log(x);
+	         	$("#sidebar").height(x);
+	    $(window).scroll(function(){
+	        if($(window).scrollTop() > 120){
+	            $("#navigation").css({
+	                "position":"fixed",
+	                "top":0
+	            });
+	            
+	        } else {
+	            $("#navigation").css({
+	                "position":"relative"                
+	            });
+	        }
+	    });
+
+	// $("a[href="#getting_started"]").click(function(e){
+	// 	e.preventDefault();
+	// 	$('html,body').animate({
+ //          scrollTop: target.offset();
+ //        }, 1000);
+	// });
+	
+
+});
 </script>
 </body>
 </html>
