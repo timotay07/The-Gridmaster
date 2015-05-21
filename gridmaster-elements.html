@@ -102,8 +102,17 @@
  //        }, 1000);
 	// });
 	
+		$("#navigation > li > a").click(function(e){
+			e.preventDefault();
+			var x = $(this).attr("href");
+			var y = $(x).position();
+			$('html,body').animate({
+				scrollTop : y.top
+			}, 800);
+			console.log(y.top);
+		});
 
-});
+	});
 </script>
 </body>
 </html>
