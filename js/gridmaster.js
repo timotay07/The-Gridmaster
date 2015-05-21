@@ -16,7 +16,7 @@ function build_xyControlPanel() {
 
 }
 
-// call function
+// call control panel build function
 build_xyControlPanel();
 
 //set global params - must build Control Panel before setting(done in previous step)
@@ -32,11 +32,11 @@ var containerWidth = Number(inputCW.val());
 //we(I) are going to rename this GridMaster "In-browser Prototyping System" - said this on 5/1/2015 and git has this version timestamped - my poor mans patent
 function gogoGridClass(lineHeight,numCols,containerWidth) {
 	this.getGridHeight = function(){
-		this.screenHeight = $(window).height();
-		if (this.screenHeight < $(document).height()) {
-			this.screenHeight = $(document).height();
+		var x = $(window).height();
+		if ( x < $(document).height()) {
+			x = $(document).height();
 		}
-		return this.screenHeight;
+		return x;
 	};
 	this.screenHeight = this.getGridHeight();
 	//vertical object params
@@ -49,11 +49,11 @@ function gogoGridClass(lineHeight,numCols,containerWidth) {
 	this.containerWidth = containerWidth;
 
 	this.recalculate = function(lineHeight,numCols,containerWidth){
-			this.screenHeight = $(window).height();
+			// this.screenHeight = $(window).height();
 			//vertical object params
 			this.lineHeight = lineHeight;
 			this.adjustedLineHeight = this.lineHeight - 2 + "px";
-			this.lines = this.screenHeight/this.lineHeight;
+			this.lines = gogoGrid.screenHeight/this.lineHeight;
 			//horizonal object params
 			this.numCols = numCols;
 			this.colWidth = (1/this.numCols) * 100;
@@ -159,7 +159,12 @@ $("#gggtoggle-button").click(function(){
 });
 $(window).resize(function(){
 	var x = $(window).height();
-	gogoGrid.screenHeight = x;
+	var y = $(document).height();
+	if( x < y) {
+		gogoGrid.screenHeight = y;
+	} else {
+		gogoGrid.screenHeight = x;
+	}
 	gogoGrid.recalculate(gogoGrid.lineHeight,gogoGrid.numCols,gogoGrid.containerWidth);
 	gogoGrid.build_yAxis();
 	gogoGrid.build_xAxis();
